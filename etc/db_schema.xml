@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="ar_epmessage" resource="default" engine="innodb" comment="Epistolary Messages Table">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true"
+                comment="Id"/>
+        <column xsi:type="boolean" name="status" nullable="false"
+                default="0" comment="Message Status"/>
+        <column xsi:type="varchar" name="subject" length="255" nullable="false" comment="Message Subject"/>
+        <column xsi:type="varchar" name="email" length="255" nullable="false" comment="User Email"/>
+        <column xsi:type="text" name="message" nullable="false" comment="Message"/>
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP" nullable="false"
+                comment="Creation Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>
